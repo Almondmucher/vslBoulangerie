@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta author="Veeti Laitinen">
+  <title>Products — VSL Boulangerie</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="VSL.jpg" alt="VSL logo" class="logo" />
+        <span class="brand-text">VSL Boulangerie</span>
+      </a>
+
+      <button id="navToggle4" class="nav-toggle" aria-expanded="false" aria-controls="mainNav4">Menu</button>
+
+      <nav id="mainNav4" class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>   
+          <li><a href="products.html" aria-current="page">Products</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="products-hero">
+      <h1>Our Products</h1>
+      <p>We bake a variety of artisan breads and pastries daily. Here are some of our featured items.</p>
+    </section>
+
+    <section class="products-list">
+      <div class="grid">
+        <article class="card">
+          <img src="baguette.jpg" alt="Baguette Rustique"/>
+          <h3>Baguette Rustique</h3>
+          <p>Sourdough bread baked to perfection - crunchy, soft chewy; perfect with butter.</p>
+        </article>
+
+        <article class="card">
+          <img src="croissant.jpg" alt="Croissants" />
+          <h3>Butter Croissant</h3>
+          <p>Classic laminated butter croissant — golden, flaky and tender.</p>
+        </article>
+
+        <article class="card">
+          <img src="pain.jpg" alt="Pain au Chocolat"/>
+          <h3>Pain au Chocolat</h3>
+          <p>Flaky pastry filled with rich dark chocolate — a perfect indulgence.</p>
+        </article>
+
+        <article class="card">
+          <img src="focaccia.jpg" alt="Focaccia Bread"/>
+          <h3>Focaccia</h3>
+          <p>Italian flatbread topped with olive oil, rosemary and sea salt — great for sandwiches.</p>
+        </article>
+
+        <article class="card">
+          <img src="campange.jpg" alt="Pain de campange"/>
+          <h3>Pain de Campagne</h3>
+          <p>Rustic country bread made with a blend of white, whole wheat and rye flours.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year4"></span> VSL Boulangerie</p>
+    </div>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const yearEl = document.getElementById('year4');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const navToggle = document.getElementById('navToggle4');
+    const mainNav = document.getElementById('mainNav4');
+
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !expanded);
+        mainNav.classList.toggle('open');
+      });
+    }
+  });
+  </script>
+</body>
+</html>

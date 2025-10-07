@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta author="Veeti Laitinen">
+  <title>Contact — VSL Boulangerie</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="VSL.jpg" alt="VSL logo" class="logo" />
+        <span class="brand-text">VSL Boulangerie</span>
+      </a>
+
+      <button id="navToggle3" class="nav-toggle" aria-expanded="false" aria-controls="mainNav3">Menu</button>
+
+      <nav id="mainNav3" class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li><a href="products.html">Products</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container contact-main">
+    <h1>Contact & Orders</h1>
+
+    <div class="contact-grid">
+      <div>
+        <h2>Get in touch</h2>
+        <p>Phone: <a href="tel:+358401234567">+358 40 123 4567</a></p>
+        <p>Email: <a href="mailto:orders@vslboulangerie.fi">orders@vslboulangerie.fi</a></p>
+        <p>Address: Mariankatu 2, Helsinki, 00170</p>
+      </div>
+
+      <form class="contact-form" action="mailto:orders@vslboulangerie.fi" method="post" enctype="text/plain">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required />
+
+        <label for="emailContact">Email</label>
+        <input id="emailContact" name="email" type="email" required />
+
+        <label for="message">Message / Order details</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year3"></span> VSL Boulangerie</p>
+    </div>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const yearEl = document.getElementById('year3');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const navToggle = document.getElementById('navToggle3');
+    const mainNav = document.getElementById('mainNav3');
+
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !expanded);
+        mainNav.classList.toggle('open');
+      });
+    }
+  });
+  </script>
+</body>
+</html>

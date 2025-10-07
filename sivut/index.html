@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta author="Veeti Laitinen">
+  <title>VSL Boulangerie — Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="VSL Boulangerie — artisan breads & pastries. Fresh daily. Helsinki." />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">  
+      <a class="brand" href="index.html">
+        <img src="VSL.jpg" alt="VSL Boulangerie logo" class="logo" />
+        <span class="brand-text">VSL Boulangerie</span>
+      </a>
+
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+
+      <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="products.html">Products</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner container">
+        <div class="hero-content">
+          <h1>Fresh artisan breads & pastries — baked daily</h1>
+          <p>VSL Boulangerie brings classic French technique and Nordic ingredients together. Warm breads, flaky viennoiserie, and seasonal pastries.</p>
+          <p><a class="btn" href="about.html">Our Story</a> <a class="btn ghost" href="contact.html">Order / Contact</a></p>
+        </div>
+        <div class="hero-image">
+          <img src="assortment.jpg" alt="Assortment of breads and pastries" /> 
+        </div>
+      </div>
+    </section>
+
+    <section class="products container">
+      <h2>Featured Products</h2>
+      <div class="grid">
+        <article class="card">
+          <img src="baguette.jpg" alt="Baguette Rustique"/>
+          <h3>Butter Croissant</h3>
+          <p>Sourdough bread baked to perfection - crunchy, soft chewy; perfect with butter.</p>
+        </article>
+
+        <article class="card">
+        <img src="croissant.jpg" alt="Croissants" />
+          <h3>Butter Croissant</h3>
+          <p>Classic laminated butter croissant — golden, flaky and tender.</p>
+        </article>
+
+        <article class="card">
+          <img src="tart.jpg" alt="Tarts" />
+          <h3>Seasonal Tart</h3>
+          <p>Fruit-forward tarts using local seasonal produce — ask about today’s flavor.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="find-us container">
+      <h2>Visit Us</h2>
+      <p>We bake every morning. Pop in for fresh loaves, pastries and coffee. Browse our weekly specials in-store.</p>
+      <div class="visit-grid">
+        <div>
+          <strong>Address</strong>
+          <p>Mariankatu 2, Helsinki, 00170</p>
+        </div>
+        <div>
+          <strong>Hours</strong>
+          <p>Mon–Fri 7:00–18:00<br>Sat 8:00–16:00<br>Sun Closed</p>
+        </div>
+        <div>
+          <strong>Phone</strong>
+          <p><a href="tel:+358401234567">+358 40 123 4567</a></p>
+        </div>  
+      </div>
+    </section>
+
+    <section class="newsletter container">
+      <h2>Get our weekly specials</h2>
+      <form action="mailto:you@example.com" method="post" enctype="text/plain" class="newsletter-form">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@domain.com" required />
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+      <p class="muted">Or follow us on social media for daily updates.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> VSL Boulangerie — All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !expanded);
+        mainNav.classList.toggle('open');
+      });
+    }
+  });
+  </script>
+</body>
+</html>

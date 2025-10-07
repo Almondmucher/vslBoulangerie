@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta author="Veeti Laitinen">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — VSL Boulangerie</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="VSL.jpg" alt="VSL logo" class="logo" />
+        <span class="brand-text">VSL Boulangerie</span>
+      </a>
+
+      <!-- ✅ Working toggle button -->
+      <button id="navToggle2" class="nav-toggle" aria-expanded="false" aria-controls="mainNav2">Menu</button>
+
+      <nav id="mainNav2" class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="products.html">Products</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="about-hero">
+      <h1>Our story</h1>
+      <p>Created in 1812, VSL Boulangerie is the oldest bakery in Finland.</p>
+      <p>We use our expertise to combine French craftsmanship with local Nordic ingredients. We value slow fermentation, seasonal flavors and careful technique.</p>
+    </section>
+
+    <section class="team">
+      <h2>The Bakery</h2>
+      <p>Everything is baked on-site, daily. We focus on sustainability: local grains, minimal waste, and recyclable packaging.</p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Our Process</h3>
+          <p>Long fermentation, hand-shaped loaves, classic pastry lamination — we respect tradition and experiment with quality ingredients.</p>
+        </div>
+        <div class="card">
+          <h3>Special Orders</h3>
+          <p>Cakes, platters and event catering available. Please contact us at <a href="contact.html">the contact page</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year2"></span> VSL Boulangerie</p>
+    </div>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const yearEl = document.getElementById('year2');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const navToggle = document.getElementById('navToggle2');
+    const mainNav = document.getElementById('mainNav2');
+
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !expanded);
+        mainNav.classList.toggle('open');
+      });
+    }
+  });
+  </script>
+</body>
+</html>
